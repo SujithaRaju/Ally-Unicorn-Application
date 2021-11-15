@@ -29,7 +29,8 @@ public class UnicornController {
     }
 
     @PutMapping(path = "/unicorns/{id}")
-    public ResponseEntity<?> createUnicornResource(@PathVariable(value = "id") Long unicornId, @RequestBody Unicorn unicorn) {
+    public ResponseEntity<?> updateUnicornResource(@PathVariable(value = "id") Long unicornId, @RequestBody Unicorn unicorn) {
+
         unicornService.updateUnicornResource(unicornId, unicorn);
         return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
     }
